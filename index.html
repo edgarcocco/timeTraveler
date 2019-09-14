@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+  content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>timeTraveler</title>
+
+  <!-- Bootstrap Stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style/timeTraveler.css">
+
+  <script src="scripts/canvas.js"></script>
+  <script src="scripts/wikiParser.js"></script>
+
+</head>
+<body>
+  <!-- Image and text -->
+  <nav id="mainNav" class="navbar navbar-light mb-3 text-light ">
+    <!--<span>Demo</span>
+
+    <div id="timeTravelerButton" class="demoButtons demoSelected">
+      <a href="#">
+        <img src="images/timeTravelerLogo2.png">
+      </a>
+    </div>
+
+    <div id="shoppingCartButton" class="demoButtons">
+      <a href="shoppingCart.html">
+        <img src="images/shoppingCart.png">
+      </a>
+    </div>-->
+
+    <a class="navbar-brand mx-auto" href="#">
+      <img src="images/timeTravelerLogo3.png" class="d-inline-block align-top" alt=""></img>
+    </a>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img id="month-up-arrow" class="arrow-button" src="images/arrow.png"></img>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img id="day-up-arrow" class="arrow-button" src="images/arrow.png"></img>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img id="year-up-arrow" class="arrow-button" src="images/arrow.png"></img>
+      </div>
+    </div>
+  </div>
+
+  <!-- V1 Form
+  <form>
+    <p>
+      Please select date you wish to travel:
+    </p>
+    <p>
+      <select id="month">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+      <input type="number" min="1" max="31" id="day" size="1" value="1"></input>
+      <input type="number" min="1000" max="2019" id="year" size="1" value="1000"></input>
+      <input type="button" id="travelBtn" value="Travel"></input>
+    </p>
+  </form>
+   -->
+
+  <canvas id="myCanvas" height="300">
+    <p>Sorry, canvas is not supported. </p>
+  </canvas>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img id="month-down-arrow" class="arrow-down arrow-button" src="images/arrow.png"></img>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img id="day-down-arrow" class="arrow-down arrow-button" src="images/arrow.png"></img>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img id="year-down-arrow" class="arrow-down arrow-button" src="images/arrow.png"></img>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex p-3 justify-content-center">
+    <!-- Button trigger modal -->
+    <button type="button" id="travel-btn" class="btn btn-outline-warning p-4" style="cursor: default;" data-toggle="modal" data-target="#ModalCenter">
+      Travel
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade time-modal" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content time-modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalCenterTitle">Month 0, 0000</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-5"><small>Made with <i class="fas fa-heart"></i> by Edgar Cocco</small></footer>
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>

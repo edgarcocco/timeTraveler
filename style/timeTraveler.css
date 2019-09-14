@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'DS-Digital Bold';
+  src: url('DS-DIGIB.TTF') format('truetype');
+}
+
+body {
+  background-color: black;
+}
+
+canvas#myCanvas{
+  border: 1px solid black;
+  font-family: 'DS-Digital Bold';
+}
+
+.arrow-button {
+  cursor: pointer;
+}
+
+.arrow-down {
+  transform: rotate(180deg);
+}
+
+footer {
+  color: gray;
+}
+
+p {
+  color: white;
+}
+
+.time-modal {
+}
+
+.time-modal-content {
+  background-color: black;
+  color: white;
+}
+
+#leftNavigator {
+}
+
+#timeTravelerButton{
+  margin: 0px 5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+#timeTravelerButton:hover {
+  transform: scale(1.1);
+}
+
+#shoppingCartButton{
+  transition: transform 0.5s ease-in-out;
+}
+
+#shoppingCartButton:hover {
+  /*background-color: #444444;*/
+  transform: scale(1.1);
+}
+
+.demoSelected{
+  background-color: #111111;
+  /*background: url(../images/circle8.png) no-repeat bottom;
+  padding-bottom: 5px;*/
+}
+
