@@ -24,8 +24,24 @@ function getWiki(wikiObject) {
   var modalTitle = document.getElementById("ModalCenterTitle");
   modalTitle.innerHTML = monthsList[month] + " " + day + ", " + year;
 
-  var modalbody = document.getElementsByClassName("modal-body")[0];
-  modalbody.innerHTML = article;
+  var modalBody = document.getElementsByClassName("modal-body")[0];
+  modalBody.innerHTML = article;
+
+  article = article.replace(" ", "%20");  
+
+  var twitterButton = document.querySelector(".twitter-share-button");
+  if(twitterButton == null)
+    twitterButton = document.createElement("a");
+
+  twitterButton.setAttribute("class", "twitter-share-button");
+  twitterButton.setAttribute("href", "https://twitter.com/intent/tweet?text=On%20"+
+                                      monthsList[month] + " " + day + ", " +
+                                      year + article + "%20&button_hashtag=timeTravel");
+  twitterButton.setAttribute("data-size", "large");
+  twitterButton.innerHTML = '<img src="images/twitter_share.png" width="80" height="40" ></img>';
+
+  var modalFooter = document.querySelector(".modal-footer");
+  modalFooter.appendChild(twitterButton);
 }
 
 function getWikiDateEvent(wikiObject) {
